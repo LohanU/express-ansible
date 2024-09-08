@@ -4,7 +4,15 @@
   vars: 
     mysql_root_password: ExpenseApp@1
     login_host: mysql.lohanu.online
+  
   tasks: 
+
+  - name: ansible to install pymysql
+    ansibile.builtin.pip:
+      name: 
+      - PyMySQL
+      executable: pip3.9
+
   - name: install mysql server
     ansible.builtin.package:
       name: mysql-server
